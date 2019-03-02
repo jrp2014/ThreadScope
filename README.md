@@ -29,6 +29,11 @@ then you can run the threadscope binary from the shell.
 
 Use `git clone` or `cabal unpack threadscope` to get the source and move into the threadscope directory.
 
+After the following the steps below to bujild threadscope, you will need to `cabal v2-install threadscope` it 
+or `cabal v2-run threadscope` it.
+
+for GHC 8.6.3, you may need to add `--allow-newer=template-haskell,Cabal` to your `cabal` commands.
+
 ### Linux
 
 GTK+2 is required to be installed. On Ubuntu-like systems:
@@ -53,13 +58,15 @@ stack install
 GTK+ and gtk-mac-integration are required.
 
 ```sh
-brew install gtk+ gtk-mac-integration
+brew install gtk+ gtk-mac-integration pkg-config
 ```
 
 Then you can build threadscope using cabal:
 ```sh
 cabal new-build --constraint="gtk +have-quartz-gtk"
 ```
+
+If you are using GHC 8.6.3, you may also need to add `--allow-newer=template-haskell,Cabal`
 
 Or using stack:
 ```sh
