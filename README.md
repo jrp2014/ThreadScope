@@ -53,7 +53,7 @@ stack install
 GTK+ and gtk-mac-integration are required.
 
 ```sh
-brew install gtk+ gtk-mac-integration
+brew install pkg-config gtk+ gtk-mac-integration
 ```
 
 Then you can build threadscope using cabal:
